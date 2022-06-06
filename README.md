@@ -1,3 +1,75 @@
+## Wireframe:
+
+![Wireframe](/assets/wireframe.png)
+
+## States Master List:
+
+- choosing (boolean value)
+- user throw
+- computer throw
+- number of games
+- number of wins
+
+## States/Events:
+
+### Choose Section:
+
+States:
+
+- choosing (boolean value)
+- user throw
+
+Events:
+
+- choose rock ('click' event on rock button)
+
+    - changes user throw value to 'rock'
+
+- choose paper ('click' event on paper button)
+
+    - changes user throw value to 'paper'
+
+- choose scissors ('click' event on scissors button)
+
+    - changes user throw value to 'scissors'
+
+- throw ('click' event on throw button)
+
+    - generates a random computer throw
+    - changes choosing to false
+    - displays results section
+    - hides choosing section
+    - determines winner using score() function
+    - adds class(es) to results section depending on winner
+    - increments total games and wins (if user wins)
+
+### Results Section:
+
+States:
+- user throw
+- computer throw
+- score
+- choosing
+
+Events:
+- play again ('click' even on play again button)
+    - sets choosing variable to true
+    - displays choosing section
+    - hides results section
+
+### Scoreboard Section:
+
+States:
+- total games
+- number of wins
+- number of losses (games - wins)
+
+
+## On Page Load:
+- make choices visible (set choosing to true)
+- reset classes of choices and results
+- update totals on scoreboard
+
 ## The Golden Rule:
 
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
