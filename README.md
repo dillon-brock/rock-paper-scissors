@@ -9,6 +9,8 @@
 - computer throw
 - number of games
 - number of wins
+- number of draws
+- winner ('user', 'computer', or 'draw')
 - throw array: ['rock', 'paper', 'scissors]
 
 ## States/Events:
@@ -19,22 +21,27 @@ States:
 
 - choosing (boolean value)
 - user throw
+- computer choice
 
 Events:
 
 - choose rock ('click' event on rock button)
 
     - changes user throw value to 'rock'
+    - calls handleThrow() function
+    - displays results section
 
 - choose paper ('click' event on paper button)
 
     - changes user throw value to 'paper'
+    - calls handleThrow() function
+    - displays results section
 
 - choose scissors ('click' event on scissors button)
 
     - changes user throw value to 'scissors'
 
-- throw ('click' event on throw button)
+- handleThrow ('click' event on any choice)
 
     - generates a random computer throw
     - changes choosing to false
@@ -42,7 +49,7 @@ Events:
     - hides choosing section
     - determines winner using score() function
     - adds class(es) to results section depending on winner
-    - increments total games and wins (if user wins)
+    - increments total games, wins, and draws
 
 ### Results Section:
 
@@ -51,6 +58,7 @@ States:
 - computer throw
 - score
 - choosing
+- winner
 
 Events:
 - play again ('click' even on play again button)
@@ -61,14 +69,14 @@ Events:
 ### Scoreboard Section:
 
 States:
-- total games
+- total number games
 - number of wins
+- number of draws
 - number of losses (games - wins)
 
 
 ## On Page Load:
-- make choices visible (set choosing to true)
-- reset classes of choices and results
+- make choices visible (displaySection() function)
 - update totals on scoreboard
 
 ## The Golden Rule:
