@@ -9,6 +9,7 @@
 - computer throw
 - number of games
 - number of wins
+- throw array: ['rock', 'paper', 'scissors]
 
 ## States/Events:
 
