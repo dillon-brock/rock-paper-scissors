@@ -68,44 +68,57 @@ scissorsButton.addEventListener('click', () => {
 
 function displayResults() {
 
-    console.log(choosing);
-
     const resultsSection = document.getElementById('results-section');
     const chooseSection = document.getElementById('choose-section');
 
     const userThrowSection = document.getElementById('user-throw-section');
     const computerThrowSection = document.getElementById('computer-throw-section');
 
+    const resultsText = document.getElementById('results-text');
+    const userThrowText = document.getElementById('user-throw');
+    const computerThrowText = document.getElementById('computer-throw');
+
+    const userThrowImage = document.getElementById('user-throw-image');
+    const computerThrowImage = document.getElementById('computer-throw-image');
+
     if (choosing === true) {
         resultsSection.classList.add('hidden');
         chooseSection.classList.remove('hidden');
-        console.log('should show choosing section');
     }
     else {
         resultsSection.classList.remove('hidden');
         chooseSection.classList.add('hidden');
-        console.log('should show results section');
+
         switch (winner) {
             case 'user':
                 userThrowSection.classList.add('win');
                 userThrowSection.classList.remove('lose');
                 computerThrowSection.classList.add('lose');
                 computerThrowSection.classList.remove('win');
+                resultsText.textContent = 'You won!';
                 break;
             case 'draw':
                 userThrowSection.classList.remove('win');
                 userThrowSection.classList.remove('lose');
                 computerThrowSection.classList.remove('win');
                 computerThrowSection.classList.remove('lose');
+                resultsText.textContent = "It's a draw!";
                 break;
             case 'computer':
                 userThrowSection.classList.remove('win');
                 userThrowSection.classList.add('lose');
                 computerThrowSection.classList.remove('lose');
                 computerThrowSection.classList.add('win');
+                resultsText.textContent = 'You lost!';
                 break;
 
         }
+
+        userThrowText.textContent = userThrow;
+        computerThrowText.textContent = computerThrow;
+
+        userThrowImage.src = './assets/' + userThrow + '.png';
+        computerThrowImage.src = './assets/' + computerThrow + '.png';
     }
 }
 
