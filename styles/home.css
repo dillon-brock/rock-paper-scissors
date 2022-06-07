@@ -14,7 +14,7 @@ main h2 {
     display: grid;
     /* grid-template-rows: 400px; */
     grid-template-columns: repeat(3, 33%);
-    justify-content: center;
+    justify-items: center;
 }
 
 .option {
@@ -64,11 +64,12 @@ main h2 {
 #results-section-grid {
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-top: 100px;
+    margin-top: 40px;
+    justify-items: center;
 }
 
 .throw-section {
-    width: 80%;
+    width: 70%;
     background-color: rgb(255, 217, 159);
     border-radius: 16px;
     display: flex;
@@ -81,6 +82,10 @@ main h2 {
 
 .throw-section.lose {
     border: 8px solid tomato;
+}
+
+.throw-section.draw {
+    border: 8px solid black;
 }
 
 #results-text {

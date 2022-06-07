@@ -95,22 +95,22 @@ function displaySection() {
         switch (winner) {
             case 'user':
                 userThrowSection.classList.add('win');
-                userThrowSection.classList.remove('lose');
+                userThrowSection.classList.remove('lose', 'draw');
                 computerThrowSection.classList.add('lose');
-                computerThrowSection.classList.remove('win');
+                computerThrowSection.classList.remove('win', 'draw');
                 resultsText.textContent = 'You won!';
                 break;
             case 'draw':
-                userThrowSection.classList.remove('win');
-                userThrowSection.classList.remove('lose');
-                computerThrowSection.classList.remove('win');
-                computerThrowSection.classList.remove('lose');
+                userThrowSection.classList.remove('win', 'lose');
+                computerThrowSection.classList.remove('win', 'lose');
+                userThrowSection.classList.add('draw');
+                computerThrowSection.classList.add('draw');
                 resultsText.textContent = "It's a draw!";
                 break;
             case 'computer':
-                userThrowSection.classList.remove('win');
+                userThrowSection.classList.remove('win', 'draw');
                 userThrowSection.classList.add('lose');
-                computerThrowSection.classList.remove('lose');
+                computerThrowSection.classList.remove('lose', 'draw');
                 computerThrowSection.classList.add('win');
                 resultsText.textContent = 'You lost!';
                 break;
@@ -149,4 +149,4 @@ function displayResults() {
 
 // page load actions
 displaySection();
-
+displayResults();
