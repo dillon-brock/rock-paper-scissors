@@ -10,7 +10,7 @@ main h2 {
     text-align: center;
 }
 
-#choose-section {
+#choose-section-grid {
     display: grid;
     /* grid-template-rows: 400px; */
     grid-template-columns: repeat(3, 33%);

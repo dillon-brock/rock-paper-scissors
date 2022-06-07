@@ -23,34 +23,36 @@
 
 
         <section id="choose-section">
-            <div class="option">
-                <div class="image-container">
-                    <img id="rock-image" alt="rock" src="./assets/rock.png">
+            <div id="choose-section-grid">
+                <div class="option">
+                    <div class="image-container">
+                        <img id="rock-image" alt="rock" src="./assets/rock.png">
+                    </div>
+                    <div class="button-container" id="rock-button-container">
+                        <button class="option-button" id="rock">Rock</button>
+                    </div>
                 </div>
-                <div class="button-container" id="rock-button-container">
-                    <button class="option-button" id="rock">Rock</button>
+                <div class="option">
+                    <div class="image-container">
+                        <img id="paper-image" alt="paper" src="./assets/paper.png">
+                    </div>
+                    <div class="button-container" id="paper-button-container">
+                        <button class="option-button" id="paper">Paper</button>
+                    </div>
                 </div>
-            </div>
-            <div class="option">
-                <div class="image-container">
-                    <img id="paper-image" alt="paper" src="./assets/paper.png">
-                </div>
-                <div class="button-container" id="paper-button-container">
-                    <button class="option-button" id="paper">Paper</button>
-                </div>
-            </div>
-            <div class="option">
-                <div class="image-container">
-                    <img id="scissors-image" alt="scissors" src="./assets/scissors.png">
-                </div>
-                <div class="button-container" id="scissors-button-container">
-                    <button class="option-button" id="scissors">Scissors</button>
+                <div class="option">
+                    <div class="image-container">
+                        <img id="scissors-image" alt="scissors" src="./assets/scissors.png">
+                    </div>
+                    <div class="button-container" id="scissors-button-container">
+                        <button class="option-button" id="scissors">Scissors</button>
+                    </div>
                 </div>
             </div>
         </section>
 
 
-        <section id="results-section">
+        <section id="results-section" class="hidden">
             <h2 id="results-text">You won!</h2>
             <div id="results-section-grid">
                 <div class="throw-section" id="user-throw-section">
