@@ -4,6 +4,7 @@ import { getRandomThrow, score } from './utils.js';
 // state
 let choosing = true;
 let wins = 0;
+let draws = 0;
 let totalGames = 0;
 let result = 0;
 let winner = '';
@@ -36,6 +37,7 @@ function handleThrow() {
             break;
         case 0:
             winner = 'draw';
+            draws++;
             break;
         case -1:
             winner = 'computer';
@@ -45,6 +47,7 @@ function handleThrow() {
 
     choosing = false;
 
+    displaySection();
     displayResults();
 
 }
@@ -66,7 +69,7 @@ scissorsButton.addEventListener('click', () => {
     handleThrow();
 });
 
-function displayResults() {
+function displaySection() {
 
     const resultsSection = document.getElementById('results-section');
     const chooseSection = document.getElementById('choose-section');
@@ -126,9 +129,24 @@ const playAgain = document.getElementById('play-again');
 
 playAgain.addEventListener('click', () => {
     choosing = true;
-    displayResults();
+    displaySection();
 });
 
+function displayResults() {
+
+    const winsDisplay = document.getElementById('wins-display');
+    const drawsDisplay = document.getElementById('draws-display');
+    const lossesDisplay = document.getElementById('losses-display');
+    const totalGamesDisplay = document.getElementById('total-games-display');
+
+    winsDisplay.textContent = wins;
+    drawsDisplay.textContent = draws;
+    lossesDisplay.textContent = totalGames - (wins + draws);
+    totalGamesDisplay.textContent = totalGames;
+
+}
+
+
 // page load actions
-displayResults();
+displaySection();
 
