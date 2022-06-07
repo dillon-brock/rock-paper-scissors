@@ -126,3 +126,23 @@ p {
     margin-bottom: 100px;
     text-align: center;
 }
+
+@media only screen and (max-width: 920px) {
+    #choose-section-grid {
+        grid-template-columns: repeat(2, 50%);
+        row-gap: 30px;
+
+    }
+
+    .option {
+        width: 70%;
+    }
+
+    #scissors-option {
+        grid-column: 1 / span 2;
+        width: 35%;
+    }
+
+
+
+}
